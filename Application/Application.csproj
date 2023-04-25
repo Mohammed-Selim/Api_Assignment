@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Features\Categories\Queries\CategoryDetailes\**" />
+    <EmbeddedResource Remove="Features\Categories\Queries\CategoryDetailes\**" />
+    <None Remove="Features\Categories\Queries\CategoryDetailes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.5.1" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DComtext\DComtext.csproj" />
+    <ProjectReference Include="..\Dtos\Dtos.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Product\commands\UpdateProduct\" />
+    <Folder Include="Features\Product\commands\DeleteProduct\" />
+    <Folder Include="Features\Product\commands\createProduct\" />
+    <Folder Include="Features\Product\Queries\GetProductById\" />
+    <Folder Include="Features\Product\Queries\FilterProduct\" />
+  </ItemGroup>
+
+</Project>
